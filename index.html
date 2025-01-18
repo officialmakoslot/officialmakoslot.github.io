@@ -1,0 +1,769 @@
+<!DOCTYPE html>
+<html lang="id">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>RTP Live - GAJAHSLOT88 DAFTAR</title>
+    <style>
+      /* Reset default styling */
+      * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+      }
+
+      /* Body */
+      body {
+        font-family: "Arial", sans-serif;
+        background-color: #f7f7f7;
+        color: #333;
+        margin: 0;
+        padding: 0;
+        background-image: url("https://i.pi943a7fdc.jpg");
+        background-size: cover;
+        background-position: center;
+      }
+
+      /* Main Container */
+      .container {
+        max-width: 1200px;
+        margin: 20px auto;
+        padding: 20px;
+        background-color: transparent;
+        border-radius: 15px;
+        box-shadow: 0 10px 20px rgba(255, 255, 255, 0.1);
+        text-align: center;
+      }
+
+      /* Banner Section */
+      .header {
+        position: relative;
+        margin-bottom: 30px;
+      }
+
+      .time {
+        position: absolute;
+        top: 10px;
+        right: 10px;
+        font-size: 1.2em;
+        color: #fff;
+        font-weight: bold;
+        z-index: 10;
+        text-shadow: 2px 2px 4px rgba(255, 253, 253, 0.5);
+      }
+
+      .header img.banner {
+        width: 100%;
+        height: auto;
+        border-radius: 10px;
+      }
+
+      /* Daftar & Login Section */
+      .auth-container {
+        display: flex;
+        justify-content: center;
+        gap: 20px;
+        margin-top: 20px;
+      }
+
+      .auth-button {
+        padding: 12px 24px;
+        font-size: 1em;
+        background-color: #e60909;
+        color: #fff;
+        text-decoration: none;
+        font-weight: bold;
+        border-radius: 5px;
+        transition: background-color 0.3s, transform 0.3s;
+      }
+
+      .auth-button:hover {
+        background-color: #000000;
+        transform: scale(1.05);
+      }
+
+      /* Marquee with Title */
+      .title-container {
+        overflow: hidden;
+        width: 100%;
+      }
+
+      .title {
+        display: inline-block;
+        white-space: nowrap;
+        animation: marquee 20s linear infinite;
+        font-size: 1.5em;
+        font-weight: bold;
+        color: #160b0b;
+        text-shadow: 2px 2px 4px rgba(255, 255, 255, 0.3);
+      }
+
+      @keyframes marquee {
+        0% {
+          transform: translateX(100%);
+        }
+        100% {
+          transform: translateX(-100%);
+        }
+      }
+
+      /* Game Grid */
+      .game-grid {
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        gap: 20px;
+        margin-top: 20px;
+      }
+
+      .game-card {
+        background-color: #020202;
+        padding: 20px;
+        text-align: center;
+        border-radius: 10px;
+        box-shadow: 0 5px 20px rgb(20, 13, 13);
+        transition: transform 0.3s ease;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        position: relative;
+        overflow: hidden; /* Menjaga tombol tetap di dalam batas gambar */
+      }
+
+      .game-card img {
+        max-width: 100%;
+        height: auto;
+        border-radius: 10px;
+        transition: transform 0.3s ease;
+      }
+
+      .game-card h3 {
+        margin-top: 10px;
+        font-size: 1.2em;
+        color: #ffffff;
+      }
+
+      /* Progress Bar */
+      .progress-container {
+        width: 100%;
+        height: 20px;
+        background-color: #e0e0e0;
+        margin-top: 10px;
+        position: relative;
+        border-radius: 5px;
+        overflow: hidden;
+      }
+
+      .progress-bar {
+        height: 100%;
+        position: relative;
+        border-radius: 5px;
+        background-color: transparent;
+        animation: fillBar 2s ease-out forwards, moveStripes 1s linear infinite;
+        background-size: 20px 20px; /* Ukuran garis */
+        background-repeat: repeat;
+      }
+
+      /* Red color for 1%-50% */
+      .progress-bar.red-bar {
+        background-color: #ff4c4c;
+        background-image: linear-gradient(
+          45deg,
+          rgba(255, 255, 255, 0.2) 25%,
+          transparent 25%,
+          transparent 50%,
+          rgba(255, 255, 255, 0.2) 50%,
+          rgba(255, 255, 255, 0.2) 75%,
+          transparent 75%,
+          transparent
+        );
+      }
+
+      /* Orange color for 51%-70% */
+      .progress-bar.orange-bar {
+        background-color: #ffa500;
+        background-image: linear-gradient(
+          45deg,
+          rgba(255, 255, 255, 0.2) 25%,
+          transparent 25%,
+          transparent 50%,
+          rgba(255, 255, 255, 0.2) 50%,
+          rgba(255, 255, 255, 0.2) 75%,
+          transparent 75%,
+          transparent
+        );
+      }
+
+      /* Green color for 71%-98% */
+      .progress-bar.green-bar {
+        background-color: #4caf50;
+        background-image: linear-gradient(
+          45deg,
+          rgba(255, 255, 255, 0.2) 25%,
+          transparent 25%,
+          transparent 50%,
+          rgba(255, 255, 255, 0.2) 50%,
+          rgba(255, 255, 255, 0.2) 75%,
+          transparent 75%,
+          transparent
+        );
+      }
+
+      .progress-bar span {
+        position: absolute;
+        left: 50%;
+        top: 50%;
+        transform: translate(-50%, -50%);
+        color: white;
+        font-weight: bold;
+      }
+
+      /* Styling untuk tombol MAIN */
+      .play-now-btn {
+        display: none;
+        padding: 12px 24px;
+        background-color: #007bff;
+        color: #fff;
+        text-decoration: none;
+        font-weight: bold;
+        border-radius: 5px;
+        transition: background-color 0.3s, transform 0.3s;
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%) scale(0.8);
+        opacity: 0;
+        animation: showButton 0.6s ease forwards;
+      }
+
+      @keyframes showButton {
+        0% {
+          opacity: 0;
+          transform: translate(-50%, -50%) scale(0.8);
+        }
+        100% {
+          opacity: 1;
+          transform: translate(-50%, -50%) scale(1);
+        }
+      }
+
+      .play-now-btn:hover {
+        background-color: #0056b3;
+        transform: scale(1.1);
+      }
+
+      .play-now-btn.clicked {
+        opacity: 0;
+        pointer-events: none;
+      }
+
+      .game-card:hover .play-now-btn {
+        display: block;
+        animation: showButton 0.6s ease forwards;
+      }
+
+      .game-card:hover img {
+        transform: scale(1.1);
+      }
+
+      /* Footer Styles */
+      .footer {
+        display: flex;
+        flex-direction: column;
+        justify-content: flex-start;
+        gap: 10px;
+        position: fixed;
+        bottom: 20px;
+        right: 20px;
+        z-index: 10;
+        padding: 10px;
+      }
+
+      .footer a {
+        display: inline-block;
+        width: 50px;
+        height: 50px;
+      }
+
+      .footer img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+      }
+
+      /* Media Query untuk perangkat mobile */
+      @media (max-width: 768px) {
+        .game-grid {
+          grid-template-columns: repeat(2, 1fr);
+        }
+      }
+
+      /* Animasi untuk Progress Bar */
+      @keyframes fillBar {
+        0% {
+          width: 0%;
+        }
+        100% {
+          width: var(--progress-width);
+        }
+      }
+
+      /* Animasi untuk garis bergerak */
+      @keyframes moveStripes {
+        0% {
+          background-position: 0 0;
+        }
+        100% {
+          background-position: 40px 40px; /* Gerakan garis bergerak */
+        }
+      }
+
+      /* Efek Glow yang aktif saat kursor mendekati card */
+      .game-card.glow {
+        box-shadow: 0 0 30px 10px rgb(255, 5, 5); /* Efek glow cahaya */
+      }
+    </style>
+  </head>
+  <body>
+    <!-- Main Container -->
+    <div class="container">
+      <div class="header">
+        <div class="time" id="time"></div>
+
+        <img
+          class="banner"
+          src="https://s7.gifyu.com/images/SexgR.gif"
+          alt="Banner"
+        />
+
+        <!-- Daftar & Login Buttons -->
+        <div class="auth-container">
+          <a href="https://t.ly/GAJAHBLAST" class="auth-button">Daftar</a>
+          <a href="https://t.ly/GAJAHBLAST" class="auth-button">Login</a>
+        </div>
+
+        <!-- Marquee with Title -->
+        <div class="title-container">
+          <div class="title">
+            SELAMAT DATANG DI GAJAHSLOT88 Situs Slot Tergacor Dan Terbesar Di
+            indonesia
+          </div>
+        </div>
+      </div>
+
+      <div class="game-grid" id="game-grid">
+        <!-- Game Cards will be added here dynamically -->
+      </div>
+    </div>
+
+    <!-- Footer Section -->
+    <div class="footer">
+      <a href="https://wa.me/6281933992617" target="_blank">
+        <img
+          src="https://media.tenor.com/cBlxfSGSZikAAAAj/whatsapp-call.gif"
+          alt="WhatsApp icaslot"
+        />
+      </a>
+      <a href="https://t.me/GAJAHSLOT88" target="_blank">
+        <img
+          src="https://s7.gifyu.com/images/SXyl0.gif"
+          alt="Telegram Gajasot88"
+        />
+      </a>
+      <a
+        href="https://app.chaport.com/widget/show.html?appid=65a1ed56e1115f13fade216f&cid=d412b3be-82b6-4f46-adcb-991b2155ca04&ctoken=1LN4wZexASvUlUndRmNJVeAcoQ8UNfkcRgyTqXTO&lastActivity=1736919864328&r=0.6533088440480757&ou=https%3A%2F%2Fwww.klamathcampercorral.com"
+        target="_blank"
+      >
+        <img src="https://iili.io/JpiLNLX.gif" alt="live chat" />
+      </a>
+    </div>
+
+    <script>
+      function updateTime() {
+        const options = { timeZone: "Asia/Jakarta", hour12: true };
+        const now = new Date().toLocaleString("id-ID", options);
+        document.getElementById("time").textContent = now;
+      }
+
+      setInterval(updateTime, 1000);
+      updateTime();
+
+      function generateRandomPercentage() {
+        return Math.floor(Math.random() * 51) + 50;
+      }
+
+      function getColorClass(percentage) {
+        if (percentage <= 50) {
+          return ["red", "red-bar"];
+        } else if (percentage <= 70) {
+          return ["orange", "orange-bar"];
+        } else {
+          return ["green", "green-bar"];
+        }
+      }
+
+      function createGameCard(gameNumber, gameImageUrl, gameName, gameUrl) {
+        const percentage = generateRandomPercentage();
+        const [textColorClass, barColorClass] = getColorClass(percentage);
+
+        return ` 
+          <div class="game-card" onmouseenter="activateGlow(event)" onmouseleave="deactivateGlow(event)">
+            <img src="${gameImageUrl}" alt="${gameName}" onclick="showPlayNowButton(event)"/>
+            <h3>${gameName}</h3>
+            <div class="progress-container">
+              <div class="progress-bar ${barColorClass}" style="--progress-width: ${percentage}%;">
+                <span class="percentage-value ${textColorClass}">${percentage}%</span>
+              </div>
+            </div>
+            <a href="${gameUrl}" class="play-now-btn" onclick="fadeOutButton(event)">GASKEUN</a>
+          </div>
+        `;
+      }
+
+      const gameGrid = document.getElementById("game-grid");
+
+      const gameUrls = [
+        "https://t.ly/GAJAHBLAST",
+        "https://t.ly/GAJAHBLAST",
+        "https://t.ly/GAJAHBLAST",
+        "https://t.ly/GAJAHBLAST",
+        "https://t.ly/GAJAHBLAST",
+        "https://t.ly/GAJAHBLAST",
+        "https://t.ly/GAJAHBLAST",
+        "https://t.ly/GAJAHBLAST",
+        "https://t.ly/GAJAHBLAST",
+        "https://t.ly/GAJAHBLAST",
+        "https://t.ly/GAJAHBLAST",
+        "https://t.ly/GAJAHBLAST",
+        "https://t.ly/GAJAHBLAST",
+        "https://t.ly/GAJAHBLAST",
+        "https://t.ly/GAJAHBLAST",
+        "https://t.ly/GAJAHBLAST",
+        "https://t.ly/GAJAHBLAST",
+        "https://t.ly/GAJAHBLAST",
+        "https://t.ly/GAJAHBLAST",
+        "https://t.ly/GAJAHBLAST",
+        "https://t.ly/GAJAHBLAST",
+        "https://t.ly/GAJAHBLAST",
+        "https://t.ly/GAJAHBLAST",
+        "https://t.ly/GAJAHBLAST",
+        "https://t.ly/GAJAHBLAST",
+        "https://t.ly/GAJAHBLAST",
+        "https://t.ly/GAJAHBLAST",
+        "https://t.ly/GAJAHBLAST",
+        "https://t.ly/GAJAHBLAST",
+        "https://t.ly/GAJAHBLAST",
+        "https://t.ly/GAJAHBLAST",
+        "https://t.ly/GAJAHBLAST",
+        "https://t.ly/GAJAHBLAST",
+        "https://t.ly/GAJAHBLAST",
+        "https://t.ly/GAJAHBLAST",
+        "https://t.ly/GAJAHBLAST",
+        "https://t.ly/GAJAHBLAST",
+        "https://t.ly/GAJAHBLAST",
+        "https://t.ly/GAJAHBLAST",
+        "https://t.ly/GAJAHBLAST",
+        "https://t.ly/GAJAHBLAST",
+        "https://t.ly/GAJAHBLAST",
+        "https://t.ly/GAJAHBLAST",
+        "https://t.ly/GAJAHBLAST",
+        "https://t.ly/GAJAHBLAST",
+        "https://t.ly/GAJAHBLAST",
+        "https://t.ly/GAJAHBLAST",
+        "https://t.ly/GAJAHBLAST",
+        "https://t.ly/GAJAHBLAST",
+        "https://t.ly/GAJAHBLAST",
+        "https://t.ly/GAJAHBLAST",
+        "https://t.ly/GAJAHBLAST",
+        "https://t.ly/GAJAHBLAST",
+        "https://t.ly/GAJAHBLAST",
+        "https://t.ly/GAJAHBLAST",
+        "https://t.ly/GAJAHBLAST",
+        "https://t.ly/GAJAHBLAST",
+        "https://t.ly/GAJAHBLAST",
+        "https://t.ly/GAJAHBLAST",
+        "https://t.ly/GAJAHBLAST",
+        "https://t.ly/GAJAHBLAST",
+        "https://t.ly/GAJAHBLAST",
+        "https://t.ly/GAJAHBLAST",
+        "https://t.ly/GAJAHBLAST",
+        "https://t.ly/GAJAHBLAST",
+        "https://t.ly/GAJAHBLAST",
+        "https://t.ly/GAJAHBLAST",
+        "https://t.ly/GAJAHBLAST",
+        "https://t.ly/GAJAHBLAST",
+        "https://t.ly/GAJAHBLAST",
+        "https://t.ly/GAJAHBLAST",
+        "https://t.ly/GAJAHBLAST",
+        "https://t.ly/GAJAHBLAST",
+        "https://t.ly/GAJAHBLAST",
+        "https://t.ly/GAJAHBLAST",
+        "https://t.ly/GAJAHBLAST",
+        "https://t.ly/GAJAHBLAST",
+        "https://t.ly/GAJAHBLAST",
+        "https://t.ly/GAJAHBLAST",
+        "https://t.ly/GAJAHBLAST",
+        "https://t.ly/GAJAHBLAST",
+        "https://t.ly/GAJAHBLAST",
+        "https://t.ly/GAJAHBLAST",
+        "https://t.ly/GAJAHBLAST",
+        "https://t.ly/GAJAHBLAST",
+        "https://t.ly/GAJAHBLAST",
+        "https://t.ly/GAJAHBLAST",
+        "https://t.ly/GAJAHBLAST",
+        "https://t.ly/GAJAHBLAST",
+        "https://t.ly/GAJAHBLAST",
+        "https://t.ly/GAJAHBLAST",
+        "https://t.ly/GAJAHBLAST",
+        "https://t.ly/GAJAHBLAST",
+        "https://t.ly/GAJAHBLAST",
+        "https://t.ly/GAJAHBLAST",
+        "https://t.ly/GAJAHBLAST",
+        "https://t.ly/GAJAHBLAST",
+        "https://t.ly/GAJAHBLAST",
+        "https://t.ly/GAJAHBLAST",
+        "https://t.ly/GAJAHBLAST",
+      ];
+
+      const gameImages = [
+        "https://dsuown9evwz4y.cloudfront.net/Images/providers/PP/vs20olympx.jpg?v=20241125",
+        "https://dsuown9evwz4y.cloudfront.net/Images/providers/PP/vswaysmahwblck.jpg?v=20241125",
+        "https://dsuown9evwz4y.cloudfront.net/Images/providers/PP/vswaysmahwgong.jpg?v=20241125",
+        "https://dsuown9evwz4y.cloudfront.net/Images/providers/PP/vs20olympgate.jpg?v=20241125",
+        "https://dsuown9evwz4y.cloudfront.net/Images/providers/PP/vs20starlightx.jpg?v=20241125",
+        "https://dsuown9evwz4y.cloudfront.net/Images/providers/PP/vs20fruitswx.jpg?v=20241125",
+        "https://dsuown9evwz4y.cloudfront.net/Images/providers/PP/vs20starlight.jpg?v=20241125",
+        "https://dsuown9evwz4y.cloudfront.net/Images/providers/PP/vs20gatotx.jpg?v=20241125",
+        "https://dsuown9evwz4y.cloudfront.net/Images/providers/PP/vs20pquestx.jpg?v=20241125",
+        "https://dsuown9evwz4y.cloudfront.net/Images/providers/PP/vswaysmahwin2.jpg?v=20241125",
+        "https://dsuown9evwz4y.cloudfront.net/Images/providers/PP/vs20olympxmas.jpg?v=20241125",
+        "https://dsuown9evwz4y.cloudfront.net/Images/providers/PP/vs25checaishen.jpg?v=20241125",
+        "https://dsuown9evwz4y.cloudfront.net/Images/providers/PP/vswaysmherc.jpg?v=20241125",
+        "https://dsuown9evwz4y.cloudfront.net/Images/providers/PP/vs20fruitsw.jpg?v=20241125",
+        "https://dsuown9evwz4y.cloudfront.net/Images/providers/PP/vswayslions.jpg?v=20241125",
+        "https://dsuown9evwz4y.cloudfront.net/Images/providers/PP/vs20sugarrushx.jpg?v=20241125",
+        "https://dsuown9evwz4y.cloudfront.net/Images/providers/PP/vs20sbxmas.jpg?v=20241125",
+        "https://dsuown9evwz4y.cloudfront.net/Images/providers/PP/vs20procountx.jpg?v=20241125",
+        "https://dsuown9evwz4y.cloudfront.net/Images/providers/PP/vs20fruitjpas.jpg?v=20241125",
+        "https://dsuown9evwz4y.cloudfront.net/Images/providers/PP/vs20pbonanza.jpg?v=20241125",
+        "https://dsuown9evwz4y.cloudfront.net/Images/providers/PGSOFT/PGSOFT_65.jpg?v=20241125",
+        "https://dsuown9evwz4y.cloudfront.net/Images/providers/PGSOFT/PGSOFT_74.jpg?v=20241125",
+        "https://dsuown9evwz4y.cloudfront.net/Images/providers/PGSOFT/PGSOFT_135.jpg?v=20241125",
+        "https://dsuown9evwz4y.cloudfront.net/Images/providers/PGSOFT/PGSOFT_104.jpg?v=20241125",
+        "https://dsuown9evwz4y.cloudfront.net/Images/providers/PGSOFT/PGSOFT_89.jpg?v=20241125",
+        "https://dsuown9evwz4y.cloudfront.net/Images/providers/PGSOFT/PGSOFT_87.jpg?v=20241125",
+        "https://dsuown9evwz4y.cloudfront.net/Images/providers/PGSOFT/PGSOFT_106.jpg?v=20241125",
+        "https://dsuown9evwz4y.cloudfront.net/Images/providers/PGSOFT/PGSOFT_1671262.jpg?v=20241125",
+        "https://dsuown9evwz4y.cloudfront.net/Images/providers/PGSOFT/PGSOFT_117.jpg?v=20241125",
+        "https://dsuown9evwz4y.cloudfront.net/Images/providers/PGSOFT/PGSOFT_110.jpg?v=20241125",
+        "https://dsuown9evwz4y.cloudfront.net/Images/providers/PGSOFT/PGSOFT_1702123.jpg?v=20241125",
+        "https://dsuown9evwz4y.cloudfront.net/Images/providers/PGSOFT/PGSOFT_1492288.jpg?v=20241125",
+        "https://dsuown9evwz4y.cloudfront.net/Images/providers/PGSOFT/PGSOFT_1580541.jpg?v=20241125",
+        "https://dsuown9evwz4y.cloudfront.net/Images/providers/PGSOFT/PGSOFT_127.jpg?v=20241125",
+        "https://dsuown9evwz4y.cloudfront.net/Images/providers/PGSOFT/PGSOFT_84.jpg?v=20241125",
+        "https://dsuown9evwz4y.cloudfront.net/Images/providers/PGSOFT/PGSOFT_53.jpg?v=20241125",
+        "https://dsuown9evwz4y.cloudfront.net/Images/providers/PGSOFT/PGSOFT_71.jpg?v=20241125",
+        "https://dsuown9evwz4y.cloudfront.net/Images/providers/PGSOFT/PGSOFT_1623475.jpg?v=20241125",
+        "https://dsuown9evwz4y.cloudfront.net/Images/providers/PGSOFT/PGSOFT_1666445.jpg?v=20241125",
+        "https://dsuown9evwz4y.cloudfront.net/Images/providers/PGSOFT/PGSOFT_1451122.jpg?v=20241125",
+        "https://dsuown9evwz4y.cloudfront.net/Images/providers/AMB/MAHJONGLEGEND.jpg?v=20241125",
+        "https://dsuown9evwz4y.cloudfront.net/Images/providers/AMB/MAHJONGXMAS.jpg?v=20241125",
+        "https://dsuown9evwz4y.cloudfront.net/Images/providers/AMB/DINOGEMS.jpg?v=20241125",
+        "https://dsuown9evwz4y.cloudfront.net/Images/providers/AMB/MAFIAWAYS.jpg?v=20241125",
+        "https://dsuown9evwz4y.cloudfront.net/Images/providers/AMB/EPICOFAZTEC.jpg?v=20241125",
+        "https://dsuown9evwz4y.cloudfront.net/Images/providers/AMB/GOVDISCO.jpg?v=20241125",
+        "https://dsuown9evwz4y.cloudfront.net/Images/providers/AMB/BLESSINGDRAGON.jpg?v=20241125",
+        "https://dsuown9evwz4y.cloudfront.net/Images/providers/AMB/MAFIAWAYS2.jpg?v=20241125",
+        "https://dsuown9evwz4y.cloudfront.net/Images/providers/AMB/MONKEYKING.jpg?v=20241125",
+        "https://dsuown9evwz4y.cloudfront.net/Images/providers/AMB/MOEMOECUTE.jpg?v=20241125",
+        "https://dsuown9evwz4y.cloudfront.net/Images/providers/AMB/CUPIDGARDEN.jpg?v=20241125",
+        "https://dsuown9evwz4y.cloudfront.net/Images/providers/AMB/ALICE.jpg?v=20241125",
+        "https://dsuown9evwz4y.cloudfront.net/Images/providers/AMB/KINGDOM.jpg?v=20241125",
+        "https://dsuown9evwz4y.cloudfront.net/Images/providers/AMB/BLESSINGTIGER.jpg?v=20241125",
+        "https://dsuown9evwz4y.cloudfront.net/Images/providers/AMB/VIRUS.jpg?v=20241125",
+        "https://dsuown9evwz4y.cloudfront.net/Images/providers/AMB/TIKI.jpg?v=20241125",
+        "https://dsuown9evwz4y.cloudfront.net/Images/providers/AMB/FISHINGPARADISE.jpg?v=20241125",
+        "https://dsuown9evwz4y.cloudfront.net/Images/providers/AMB/VEGGIESBONANZA.jpg?v=20241125",
+        "https://dsuown9evwz4y.cloudfront.net/Images/providers/AMB/MERMAID.jpg?v=20241125",
+        "https://dsuown9evwz4y.cloudfront.net/Images/providers/AMB/JOKER.jpg?v=20241125",
+        "https://dsuown9evwz4y.cloudfront.net/Images/providers/NETENT/royalnutsr96f100.jpg?v=20241125",
+        "https://dsuown9evwz4y.cloudfront.net/Images/providers/NETENT/gladiatorclash00.jpg?v=20241125",
+        "https://dsuown9evwz4y.cloudfront.net/Images/providers/NETENT/bigmoneywher96f1.jpg?v=20241125",
+        "https://dsuown9evwz4y.cloudfront.net/Images/providers/NETENT/lockandpopr96f10.jpg?v=20241125",
+        "https://dsuown9evwz4y.cloudfront.net/Images/providers/NETENT/junglespirir96f1.jpg?v=20241125",
+        "https://dsuown9evwz4y.cloudfront.net/Images/providers/NETENT/pandorastreasure.jpg?v=20241125",
+        "https://dsuown9evwz4y.cloudfront.net/Images/providers/NETENT/goldenrealmr96f1.jpg?v=20241125",
+        "https://dsuown9evwz4y.cloudfront.net/Images/providers/NETENT/leprechaunjoy000.jpg?v=20241125",
+        "https://dsuown9evwz4y.cloudfront.net/Images/providers/NETENT/goldenwheelr96f1.jpg?v=20241125",
+        "https://dsuown9evwz4y.cloudfront.net/Images/providers/NETENT/RainforestGold.jpg?v=20241125",
+        "https://dsuown9evwz4y.cloudfront.net/Images/providers/NETENT/deadoralive2fb00.jpg?v=20241125",
+        "https://dsuown9evwz4y.cloudfront.net/Images/providers/NETENT/parthenonr100000.jpg?v=20241125",
+        "https://dsuown9evwz4y.cloudfront.net/Images/providers/NETENT/bigbangboomr96f1.jpg?v=20241125",
+        "https://dsuown9evwz4y.cloudfront.net/Images/providers/NETENT/101candiesr96f10.jpg?v=20241125",
+        "https://dsuown9evwz4y.cloudfront.net/Images/providers/NETENT/finncandyspr96f1.jpg?v=20241125",
+        "https://dsuown9evwz4y.cloudfront.net/Images/providers/NETENT/elkhunterr96f100.jpg?v=20241125",
+        "https://dsuown9evwz4y.cloudfront.net/Images/providers/NETENT/milkshakexxr96f1.jpg?v=20241125",
+        "https://dsuown9evwz4y.cloudfront.net/Images/providers/NETENT/starbursttremef1.jpg?v=20241125",
+        "https://dsuown9evwz4y.cloudfront.net/Images/providers/NETENT/darkking00000000.jpg?v=20241125",
+        "https://dsuown9evwz4y.cloudfront.net/Images/providers/NETENT/goldentavern0000.jpg?v=20241125",
+        "https://dsuown9evwz4y.cloudfront.net/Images/providers/OCTOPLAY/OCTOPLAY_103001.jpg?v=20241125",
+        "https://dsuown9evwz4y.cloudfront.net/Images/providers/OCTOPLAY/OCTOPLAY_103002.jpg?v=20241125",
+        "https://dsuown9evwz4y.cloudfront.net/Images/providers/OCTOPLAY/OCTOPLAY_103003.jpg?v=20241125",
+        "https://dsuown9evwz4y.cloudfront.net/Images/providers/OCTOPLAY/OCTOPLAY_103004.jpg?v=20241125",
+        "https://dsuown9evwz4y.cloudfront.net/Images/providers/OCTOPLAY/OCTOPLAY_103005.jpg?v=20241125",
+        "https://dsuown9evwz4y.cloudfront.net/Images/providers/OCTOPLAY/OCTOPLAY_103006.jpg?v=20241125",
+        "https://dsuown9evwz4y.cloudfront.net/Images/providers/OCTOPLAY/OCTOPLAY_103007.jpg?v=20241125",
+        "https://dsuown9evwz4y.cloudfront.net/Images/providers/OCTOPLAY/OCTOPLAY_103008.jpg?v=20241125",
+        "https://dsuown9evwz4y.cloudfront.net/Images/providers/OCTOPLAY/OCTOPLAY_103009.jpg?v=20241125",
+        "https://dsuown9evwz4y.cloudfront.net/Images/providers/OCTOPLAY/OCTOPLAY_103010.jpg?v=20241125",
+        "https://dsuown9evwz4y.cloudfront.net/Images/providers/OCTOPLAY/OCTOPLAY_103011.jpg?v=20241125",
+        "https://dsuown9evwz4y.cloudfront.net/Images/providers/OCTOPLAY/OCTOPLAY_103012.jpg?v=20241125",
+        "https://dsuown9evwz4y.cloudfront.net/Images/providers/OCTOPLAY/OCTOPLAY_103013.jpg?v=20241125",
+        "https://dsuown9evwz4y.cloudfront.net/Images/providers/OCTOPLAY/OCTOPLAY_103014.jpg?v=20241125",
+        "https://dsuown9evwz4y.cloudfront.net/Images/providers/OCTOPLAY/OCTOPLAY_103015.jpg?v=20241125",
+        "https://dsuown9evwz4y.cloudfront.net/Images/providers/OCTOPLAY/OCTOPLAY_103016.jpg?v=20241125",
+        "https://dsuown9evwz4y.cloudfront.net/Images/providers/OCTOPLAY/OCTOPLAY_103017.jpg?v=20241125",
+        "https://dsuown9evwz4y.cloudfront.net/Images/providers/OCTOPLAY/OCTOPLAY_103018.jpg?v=20241125",
+        "https://dsuown9evwz4y.cloudfront.net/Images/providers/OCTOPLAY/OCTOPLAY_103019.jpg?v=20241125",
+        "https://dsuown9evwz4y.cloudfront.net/Images/providers/OCTOPLAY/OCTOPLAY_103020.jpg?v=20241125",
+      ];
+
+      const gameNames = [
+        "Gates of Olympus 1000",
+        "Mahjong Wins3 Black Scatter",
+        "Mahjong Wins - Gong Xi Fa Cai",
+        "Gates of Olympus™",
+        "Starlight Princess™ 1000",
+        "Sweet Bonanza 1000",
+        "Starlight Princess",
+        "Gates of Gatot Kaca 1000",
+        "Pirate Quest 1000",
+        "Mahjong Wins 2",
+        "Gates of Olympus Xmas 1000",
+        "Chest of Caishen",
+        "Mighty Hercules",
+        "Sweet Bonanza",
+        "5 Lions Megaways",
+        "Sugar Rush 1000",
+        "Sweet Bonanza Xmas",
+        "Wisdom of Athena 1000",
+        "Jajanan Pasar",
+        "Pyramid Bonanza",
+        "Mahjong Ways",
+        "Mahjong Ways 2",
+        "Wild Bounty Showdown",
+        "Wild Bandito",
+        "Lucky Neko",
+        "Treasures of Aztec",
+        "Ways of the Qilin",
+        "Gemstones Gold",
+        "Cocktail Nights",
+        "Jurassic Kingdom",
+        "Geisha's Revenge",
+        "Pinata Wins",
+        "Mafia Mayhem",
+        "Speed Winner",
+        "Queen of Bounty",
+        "The Great Icescape",
+        "Caishen Wins",
+        "Anubis Wrath",
+        "Chocolate Deluxe",
+        "Dragon Hatch 2",
+        "Mahjong Legend",
+        "Mahjong Legend Xmas",
+        "Dino Gems",
+        "Mafia Ways",
+        "Epic of Aztec",
+        "Government Disco",
+        "Blessing of the Dragon",
+        "Mafia Ways II : Metro Haven Heis",
+        "The Monkey King",
+        "Moe Moe Cute",
+        "Cupid's Garden",
+        "Alice's Wonder",
+        "Kingdom Z",
+        "Blessing of the Tiger",
+        "Lab 19 Mania",
+        "Tiki Paradise",
+        "Fishing's Paradise",
+        "Veggies Bonanza",
+        "Mermaid's Market",
+        "The King Joker",
+        "Royal Nuts",
+        "Gladiator Clash",
+        "Big Money Wheel",
+        "Lock and Pop",
+        "Jungle Spirit Megaways",
+        "Pandora’s Treasure",
+        "Golden Realms",
+        "Leprechaun Joy",
+        "Golden Wheels of Egypt",
+        "Rainforest Gold",
+        "Dead or Alive 2™ Feature Buy",
+        "Parthenon: Quest for Immortality™",
+        "Big Bang Boom",
+        "101 Candies",
+        "Finn and The Candy Spin",
+        "Elk Hunter™",
+        "Milkshake™ XXXtreme",
+        "Starburst™ XXXtreme",
+        "Dark King: Forbidden Riches™",
+        "Finn's Golden Tavern™",
+        "Aztec Ancients",
+        "Blarney's Gold",
+        "Blazing Touch",
+        "Bullet Bonanza",
+        "Caishen's Temple of Gold",
+        "Cash Strike",
+        "Disco Dive",
+        "Gold Chain",
+        "Heavy Anchor",
+        "Hot Harvest",
+        "Lollicat",
+        "Mr Piggles",
+        "Mutant Potatoes",
+        "Panda Bills",
+        "Pearly Shores",
+        "Salmon King",
+        "Spirit Blast",
+        "Star Kingdom",
+        "Twice as Nice",
+        "Super Sundae",
+      ];
+
+      for (let i = 0; i < gameImages.length; i++) {
+        gameGrid.innerHTML += createGameCard(
+          i + 1,
+          gameImages[i],
+          gameNames[i],
+          gameUrls[i]
+        );
+      }
+
+      function showPlayNowButton(event) {
+        const gameCard = event.target.closest(".game-card");
+        const playButton = gameCard.querySelector(".play-now-btn");
+        playButton.style.display = "block";
+      }
+
+      function fadeOutButton(event) {
+        event.preventDefault();
+        const button = event.target;
+        button.classList.add("clicked");
+        setTimeout(() => {
+          window.location.href = button.href;
+        }, 500);
+      }
+
+      function activateGlow(event) {
+        const gameCard = event.target.closest(".game-card");
+        gameCard.classList.add("glow");
+      }
+
+      function deactivateGlow(event) {
+        const gameCard = event.target.closest(".game-card");
+        gameCard.classList.remove("glow");
+      }
+    </script>
+  </body>
+</html>
